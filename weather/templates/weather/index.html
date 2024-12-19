@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        
+        <!-- Ввод города -->
+        <input type="text" id="city" placeholder="Enter city name">
+        <button id="getWeatherBtn">Get Weather</button>
+
+        <!-- Выпадающий список для выбора прогноза -->
+        <select id="forecastType">
+            <option value="one_day">One Day</option>
+            <option value="weekly">Weekly</option>
+        </select>
+
+        <!-- Блок для вывода текущей погоды -->
+        <div id="weatherResult" style="display:none;">
+            <h2 id="cityName"></h2>
+            <p><strong>Temperature:</strong> <span id="temperature"></span> °C</p>
+            <p><strong>Description:</strong> <span id="description"></span></p>
+            <p><strong>Wind Speed:</strong> <span id="windSpeed"></span> m/s</p>
+            <p><strong>Cloudiness:</strong> <span id="cloudiness"></span>%</p>
+            <img id="weatherIcon" src="" alt="Weather Icon">
+        </div>
+
+        <!-- Блок для вывода прогноза на неделю -->
+        <h2 id="forecastTitle" style="display:none;">5-Day Forecast</h2>
+        <div id="weatherWeeklyResult" style="display:none;">
+            <!-- Здесь будут выводиться прогнозы на неделю -->
+        </div>
+
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
